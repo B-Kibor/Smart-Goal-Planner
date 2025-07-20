@@ -17,22 +17,19 @@ The **Smart Goal Planner** is a React-based web application that helps users set
 
 ## Project Structure
 
-smart-goal-planner/
-├── public/
-├── src/
-│ ├── components/
-│ │ ├── GoalForm.jsx
-│ │ ├── GoalList.jsx
-│ │ ├── DepositForm.jsx
-│ │ └── Overview.jsx
-│ └── App.jsx
-├── db.json ← Mock backend (JSON Server)
-├── tailwind.config.js
-├── postcss.config.js
-└── README.md
-
-
----
+smart-goal-planner:
+    public
+    src
+ components:
+   GoalForm.jsx
+   GoalList.jsx
+   DepositForm.jsx
+   Overview.jsx
+   App.jsx
+ db.json ← Mock backend (JSON Server)
+ tailwind.config.js
+ postcss.config.js
+ README.md
 
 ## 🛠️ Technologies Used
 
@@ -56,4 +53,4 @@ Betty Kibor
 
 ## License
 This project is open-source and available under the MIT License.
-# Smart-Goal-Planner
+

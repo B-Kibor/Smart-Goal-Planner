@@ -1,12 +1,58 @@
-# React + Vite
+# SMART GOAL PLANNER
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The **Smart Goal Planner** is a React-based web application that helps users set, track, and manage their financial savings goals. Users can add multiple goals, make deposits, visualize their savings progress, and view overviews like total saved, completed goals, and upcoming deadlines.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Add new savings goals (name, target amount, category, deadline)
+- Make deposits to individual goals
+- Track savings progress with visual progress bars
+- Overview dashboard (total goals, total saved, goals completed)
+- Automatic warnings for overdue goals or those nearing deadlines
+- Clean, responsive UI with Tailwind CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Project Structure
+
+smart-goal-planner/
+├── public/
+├── src/
+│ ├── components/
+│ │ ├── GoalForm.jsx
+│ │ ├── GoalList.jsx
+│ │ ├── DepositForm.jsx
+│ │ └── Overview.jsx
+│ └── App.jsx
+├── db.json ← Mock backend (JSON Server)
+├── tailwind.config.js
+├── postcss.config.js
+└── README.md
+
+
+---
+
+## 🛠️ Technologies Used
+
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [JSON Server](https://github.com/typicode/json-server)
+- [Chart.js](https://www.chartjs.org/) *(optional for future enhancements)*
+
+---
+
+## Installation Instructions
+
+1. Clone the repository
+2.Install dependencies
+3.Start JSON Server
+4.Start the React App
+
+## Author
+Betty Kibor
+
+
+## License
+This project is open-source and available under the MIT License.

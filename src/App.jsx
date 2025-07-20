@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import GoalForm from "./components/GoalForm";
-import GoalList from "./components/GoalList";
-import DepositForm from "./components/DepositForm";
-import Overview from "./components/Overview";
-import Chart from "./components/Chart";
+import GoalForm from "./components/GoalForm.jsx";
+import GoalList from "./components/GoalList.jsx";
+import DepositForm from "./components/DepositForm.jsx";
+import Overview from "./components/Overview.jsx";
+import Chart from "./components/Chart.jsx";
 
 function App() {
   const [goals, setGoals] = useState([]);
@@ -11,7 +11,8 @@ function App() {
   useEffect(() => {
     fetch("http://localhost:3000/goals")
       .then((res) => res.json())
-      .then(setGoals);
+      .then(setGoals)
+      .catch((err) => console.error("Fetch goals error:", err));
   }, []);
 
   const addGoal = (newGoal) => {
@@ -21,7 +22,8 @@ function App() {
       body: JSON.stringify(newGoal),
     })
       .then((res) => res.json())
-      .then((goal) => setGoals([...goals, goal]));
+      .then((goal) => setGoals([...goals, goal]))
+      .catch((err) => console.error("Add goal error:", err));
   };
 
   const updateGoal = (updatedGoal) => {
@@ -34,21 +36,24 @@ function App() {
       .then((data) => {
         const updated = goals.map((g) => (g.id === data.id ? data : g));
         setGoals(updated);
-      });
+      })
+      .catch((err) => console.error("Update goal error:", err));
   };
 
   const deleteGoal = (id) => {
     fetch(`http://localhost:3000/goals/${id}`, {
       method: "DELETE",
-    }).then(() => setGoals(goals.filter((goal) => goal.id !== id)));
+    })
+      .then(() => setGoals(goals.filter((goal) => goal.id !== id)))
+      .catch((err) => console.error("Delete goal error:", err));
   };
 
   return (
     <div className="p-4 max-w-5xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">SMART Goal Planner</h1>
+      <h1 className="text-3xl font-bold mb-4">Smart Goal Planner</h1>
       <GoalForm onAddGoal={addGoal} />
       <Overview goals={goals} />
-      <DepositForm goals={goals} onUpdateGoal={updateGoal} />
+      <DepositForm goals={goals} onDeposit={updateGoal} />
       <GoalList
         goals={goals}
         onDeleteGoal={deleteGoal}

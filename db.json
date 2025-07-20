@@ -1,13 +1,22 @@
 {
   "goals": [
     {
-      "id": "1",
-      "name": "Travel Fund - Japan",
+      "id": "ebee23f0-6191-4bcf-b1c2-05625f8b2bbb",
+      "name": "Buy a phone",
+      "targetAmount": 40000,
+      "category": "Phone",
+      "deadline": "2025-07-20",
+      "savedAmount": 10000,
+      "createdAt": "2025-07-20"
+    },
+    {
+      "id": "95c33914-6e08-4b07-a753-c7a0d250bda7",
+      "name": "Buy a wig",
       "targetAmount": 5000,
-      "savedAmount": 3200,
-      "category": "Travel",
-      "deadline": "2025-12-31",
-      "createdAt": "2024-01-15"
+      "category": "Hair",
+      "deadline": "2025-08-03",
+      "savedAmount": 2000,
+      "createdAt": "2025-07-20"
     }
   ]
 }
